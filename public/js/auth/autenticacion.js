@@ -1,19 +1,19 @@
 class Autenticacion {
   autEmailPass (email, password) {
-    firebase.auth().signInWithEmailAndPassword(email, password).then(result => {
-      if (result.user.emailVerified) {
-        $('#avatar').attr('src', 'imagenes/usuario_auth.png')
-        Materialize.toast(`Bienvenido ${result.user.displayName}`, 5000)
-      } else {
-        firebase.auth().signOut()
-        Materialize.toast(
-          `Por favor realiza la verificación de la cuenta`,
-          5000
-        )
-      }
-    })
+    // firebase.auth().signInWithEmailAndPassword(email, password).then(result => {
+    //   if (result.user.emailVerified) {
+    //     $('#avatar').attr('src', 'imagenes/usuario_auth.png')
+    //     Materialize.toast(`Bienvenido ${result.user.displayName}`, 5000)
+    //   } else {
+    //     firebase.auth().signOut()
+    //     Materialize.toast(
+    //       `Por favor realiza la verificación de la cuenta`,
+    //       5000
+    //     )
+    //   }
+    // })
 
-    $('.modal').modal('close')
+    // $('.modal').modal('close')
   }
 
   crearCuentaEmailPass (email, password, nombres) {
@@ -34,14 +34,14 @@ class Autenticacion {
           Materialize.toast(error.message, 4000)
         })
 
-        firebase.auth().signOut()
+        // firebase.auth().signOut()
 
-        Materialize.toast(
-          `Bienvenido ${nombres}, debes realizar el proceso de verificación`,
-          4000
-        )
+        // Materialize.toast(
+        //   `Bienvenido ${nombres}, debes realizar el proceso de verificación`,
+        //   4000
+        // )
 
-        $('.modal').modal('close')
+        // $('.modal').modal('close')
       })
       .catch(error => {
         console.error(error)
